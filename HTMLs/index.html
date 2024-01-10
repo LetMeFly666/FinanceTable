@@ -87,7 +87,7 @@
                 return;
             }
             const data = {date: date, description: description, credit: credit, debit: debit};
-            fetch('http://127.0.0.1:81/add1', {
+            fetch('/add1', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
