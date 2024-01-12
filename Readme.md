@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2024-01-10 14:31:16
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-01-10 14:40:13
+ * @LastEditTime: 2024-01-12 23:22:33
 -->
 # FinanceTable
 
@@ -21,4 +21,10 @@
 
 ## 使用效果
 
-![效果图](https://github.com/LetMeFly666/FinanceTable/assets/56995506/d4e8d7ed-c8f4-454f-a3ab-d7b48f3dfc8f)
+只读用户：
+
+![r](https://github.com/LetMeFly666/FinanceTable/assets/56995506/aae58a8d-9aac-4b79-afe6-0f56a42ee288)
+
+读写用户：
+
+![rw](https://github.com/LetMeFly666/FinanceTable/assets/56995506/13f8ab90-7956-4d59-980b-af3696b7f62e)
