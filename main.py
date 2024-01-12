@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2024-01-09 19:41:42
 LastEditors: LetMeFly
-LastEditTime: 2024-01-12 23:07:48
+LastEditTime: 2024-01-12 23:10:56
 '''
 from flask import Flask, request, jsonify, send_file
 from functools import wraps
@@ -88,9 +88,7 @@ def add1():
     if recepit:
         with open(f'Imgs/{newId}.jpg', 'wb') as f:
             f.write(base64.b64decode(recepit))
-    if last_balance:
-        last_balance = last_balance[0]
-    else:
+    if not last_balance:
         last_balance = 0.0
     # 计算新的balance值
     credit = float(data.get('credit', 0.0))
