@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2024-01-09 23:25:29
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-01-10 14:49:01
+ * @LastEditTime: 2024-01-12 20:57:31
 -->
 <html>
 <head>
@@ -110,8 +110,8 @@
 <body>
     <h2>Finance Data</h2>
     <table id="financeTable">
-        <tr><th>id</th><th>日期</th><th>说明</th><th>入账</th><th>出账</th><th>账目余额</th></tr>
-        <tr id="_1"><td>1</td><td>2024年1月9日</td><td>余额结转</td><td>100.00</td><td>0</td><td name="balance">100.00</td></tr>
+        <tr><th>id</th><th>日期</th><th>说明</th><th>入账</th><th>出账</th><th>账目余额</th><th>报销凭证</th></tr>
+        <tr id="_1"><td>1</td><td>2024年1月9日</td><td>余额结转</td><td>100.00</td><td>0</td><td name="balance">100.00</td><td name="recepit"><button onclick="window.location.href='/img/1'">报销凭证</button></td></tr>
     </table>
     <button id="addRowButton" onclick="addRow()">新增一行</button>
 </body>
