@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2024-01-09 23:25:29
  * @LastEditors: LetMeFly
- * @LastEditTime: 2024-01-12 20:57:31
+ * @LastEditTime: 2024-01-12 22:48:50
 -->
 <html>
 <head>
@@ -31,6 +31,7 @@
                 <td><input type="number" value="0" name="credit" min="0" step="0.01" onchange="change1val(this)"></td>
                 <td><input type="number" value="0" name="debit" min="0" step="0.01" onchange="change1val(this)"></td>
                 <td name="balance">${lastVal}</td>
+                <td><input type="file" name="recepit" accept=".jpg"></td>
             `;
             document.getElementById("addRowButton").innerText = "提交更改";
             document.getElementById("addRowButton").onclick = submitChange;
@@ -64,7 +65,7 @@
             row.cells[5].innerText = newBalance.toFixed(2);
         }
 
-        function submitChange() {
+        function submitChangeAfterFileLoaded(imgBase64) {
             const row = document.querySelector('#_' + (document.getElementById("financeTable").rows.length - 1));
             const date = row.querySelector('input[name="date"]').value;
             const description = row.querySelector('input[name="description"]').value;
@@ -86,7 +87,7 @@
                 alert('入账和出帐至多有一');  // 怎么做到的
                 return;
             }
-            const data = {date: date, description: description, credit: credit, debit: debit};
+            const data = {date: date, description: description, credit: credit, debit: debit, recepit: imgBase64};
             fetch('/add1', {
                 method: 'POST',
                 headers: {
@@ -104,6 +105,21 @@
                 // 处理错误
                 console.error(error);
             });
+        }
+
+        function submitChange() {
+            const row = document.querySelector('#_' + (document.getElementById("financeTable").rows.length - 1));
+            const recepit = row.querySelector('input[name="recepit"]').files[0];
+            if (!recepit) {
+                submitChangeAfterFileLoaded('');
+                return;
+            }
+            const reader = new FileReader();
+            reader.onload = function() {
+                const imgData = reader.result.split(',')[1];  // base64
+                submitChangeAfterFileLoaded(imgData);
+            }
+            reader.readAsDataURL(recepit);
         }
     </script>
 </head>
