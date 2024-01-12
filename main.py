@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2024-01-09 19:41:42
 LastEditors: LetMeFly
-LastEditTime: 2024-01-12 23:10:56
+LastEditTime: 2024-01-12 23:17:15
 '''
 from flask import Flask, request, jsonify, send_file
 from functools import wraps
@@ -82,14 +82,16 @@ def add1():
     cursor = conn.cursor()
     # 获取数据表中最后一行的balance值
     cursor.execute("SELECT id, balance FROM finance ORDER BY id DESC LIMIT 1")
-    lastId, last_balance = cursor.fetchone()
+    result = cursor.fetchone()
+    if not result:
+        lastId, last_balance = 0, 0.0
+    else:
+        lastId, last_balance = result
     newId = lastId + 1
     recepit = data.get('recepit')
     if recepit:
         with open(f'Imgs/{newId}.jpg', 'wb') as f:
             f.write(base64.b64decode(recepit))
-    if not last_balance:
-        last_balance = 0.0
     # 计算新的balance值
     credit = float(data.get('credit', 0.0))
     debit = float(data.get('debit', 0.0))
