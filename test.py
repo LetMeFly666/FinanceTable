@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2025-05-10 09:23:14
 LastEditors: LetMeFly.xyz
-LastEditTime: 2025-05-10 10:03:22
+LastEditTime: 2025-05-10 10:13:17
 Description: 测试程序是否正常运行 - 测试前请先备份数据库
 '''
 import requests
@@ -16,7 +16,7 @@ except:
     readonlyKey = '123'
 
 
-TEST_ROUND = 300
+TEST_ROUND = 5000
 HOST_ADDRESS = f'http://127.0.0.1:81'
 TEST_IS_OUT = 0.9        # 90%的概率是出账
 TEST_MAX_AMOUNT = 50000  # 单笔金额最大上限
