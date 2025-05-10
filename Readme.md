@@ -1,8 +1,8 @@
 <!--
  * @Author: LetMeFly
  * @Date: 2024-01-10 14:31:16
- * @LastEditors: LetMeFly
- * @LastEditTime: 2024-01-12 23:22:33
+ * @LastEditors: LetMeFly.xyz
+ * @LastEditTime: 2025-05-10 10:18:33
 -->
 # FinanceTable
 
@@ -28,3 +28,9 @@
 读写用户：
 
 ![rw](https://github.com/LetMeFly666/FinanceTable/assets/56995506/13f8ab90-7956-4d59-980b-af3696b7f62e)
+
+## 免责声明
+
+若部署于生产环境，建议增加秘密复杂度和使用HTTPs加密。
+
+本脚本只是一个辅助作用，用心和细心才是王道。

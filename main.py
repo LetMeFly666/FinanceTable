@@ -1,8 +1,8 @@
 '''
 Author: LetMeFly
 Date: 2024-01-09 19:41:42
-LastEditors: LetMeFly
-LastEditTime: 2024-01-15 21:23:36
+LastEditors: LetMeFly.xyz
+LastEditTime: 2025-05-10 10:10:14
 '''
 from flask import Flask, request, jsonify, send_file
 from functools import wraps
@@ -94,9 +94,9 @@ def add1():
         with open(f'Imgs/{newId}.jpg', 'wb') as f:
             f.write(base64.b64decode(recepit))
     # 计算新的balance值
-    credit = Decimal(data.get('credit', 0.0))
-    debit = Decimal(data.get('debit', 0.0))
-    new_balance = Decimal(last_balance) + credit - debit
+    credit = Decimal(str(data.get('credit', 0.0)))
+    debit = Decimal(str(data.get('debit', 0.0)))
+    new_balance = Decimal(str(last_balance)) + credit - debit
     new_balance = float(new_balance)
     # 将数据插入到表中
     cursor.execute("INSERT INTO finance (date, description, credit, debit, balance) VALUES (?, ?, ?, ?, ?)", (data['date'], data['description'], data['credit'], data['debit'], new_balance))
