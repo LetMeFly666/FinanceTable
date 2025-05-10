@@ -2,7 +2,7 @@
  * @Author: LetMeFly
  * @Date: 2024-01-10 14:31:16
  * @LastEditors: LetMeFly.xyz
- * @LastEditTime: 2025-05-10 10:18:33
+ * @LastEditTime: 2025-05-10 11:25:53
 -->
 # FinanceTable
 
@@ -31,6 +31,6 @@
 
 ## 免责声明
 
-若部署于生产环境，建议增加秘密复杂度和使用HTTPs加密。
+若部署于生产环境，建议增加密码复杂度和使用HTTPs加密。
 
 本脚本只是一个辅助作用，用心和细心才是王道。
